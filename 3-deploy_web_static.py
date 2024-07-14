@@ -5,7 +5,7 @@ from fabric.api import env, run, put, local
 from datetime import datetime
 import os
 
-env.hosts = ['35.174.207.53', '54.237.227.188']
+env.hosts = ['100.25.163.188', '34.203.77.186']
 
 
 def do_pack():
@@ -16,7 +16,7 @@ def do_pack():
 
         local('mkdir -p versions')
         local(f'tar -cvzf {filename} web_static')
-        result = local(f'test -e {file_path} && echo "Found"', capture=True)
+        result = local(f'test -e {filename} && echo "Found"', capture=True)
         return filename
     except:
         return None

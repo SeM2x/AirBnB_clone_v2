@@ -16,7 +16,7 @@ def do_pack():
 
         local('mkdir -p versions')
         local(f'tar -cvzf {filename} web_static')
-        result = local(f'test -e {file_path} && echo "Found"', capture=True)
+        result = local(f'test -e {filename} && echo "Found"', capture=True)
         return filename
     except:
         return None
