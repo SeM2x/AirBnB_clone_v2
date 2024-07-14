@@ -9,10 +9,12 @@ env.hosts = ['100.25.163.188', '34.203.77.186']
 
 
 def get_date(filename):
+    """returns the date which the file is created at"""
     return int(filename.split('.')[0].split('_')[-1])
 
 
 def clean_local(number):
+    """cleans the versions folder"""
     with hide('commands'):
         res = local('ls versions', capture=True)
     files = res.split('\n')
@@ -25,6 +27,7 @@ def clean_local(number):
 
 
 def clean_remote(number):
+    """cleans /data/web_static/releases folder of both of your web servers"""
     path = '/data/web_static/releases/'
     with hide('running', 'stdout', 'stderr'):
         res = run(f'ls {path}')
@@ -38,7 +41,7 @@ def clean_remote(number):
 
 
 def do_clean(number=0):
-    """"""
+    """cleans local and both remote servers"""
     number = int(number)
     if number == 0:
         number = 1
