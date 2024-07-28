@@ -28,10 +28,9 @@ def py_is_cool(text='is cool'):
     return f"Python {text.replace('_', ' ')}"
 
 
-@app.route("/number/<n>", strict_slashes=False)
+@app.route("/number/<int:n>", strict_slashes=False)
 def number(n):
-    if type(n) is int:
-        return f"{n} is a number"
+    return f"{n} is a number"
 
 
 if __name__ == "__main__":
