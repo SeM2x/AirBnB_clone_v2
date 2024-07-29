@@ -13,7 +13,8 @@
 	float: left;
 	height: 100%;
 	width: 25%;
-
+	position: relative;
+	background-color: #FAFAFA;
 	line-height: 20px;
 	border-right: 1px solid #DDDDDD;
 }
@@ -24,7 +25,8 @@
 	height: 100%;
 	float: left;
     width: 25%;
-
+	position: relative;
+	background-color: #FAFAFA;
 	line-height: 20px;
 }
 
@@ -37,11 +39,11 @@
     margin-left: -1px;
     margin-top: 8px;
     padding: 25px 0px;
-    
     border: 1px solid #DDDDDD;
     border-radius: 4px;
-
+	position: absolute;
     overflow-y: auto;
+    z-index: 1000;
 }
 
 .locations:hover .popover {
